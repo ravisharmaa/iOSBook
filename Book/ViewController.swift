@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var mainLabel: UILabel!
+    var lightStatus = true
+    
+    @IBOutlet weak var lightButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +23,20 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func changeLabelText(_ sender: Any) {
-        mainLabel.text = "This is now changed"
+    @IBAction func buttonPressed(_ sender: Any) {
+        lightStatus = !lightStatus
+        
+        updateUI()
+    }
+    
+    fileprivate func updateUI() {
+        if lightStatus {
+            view.backgroundColor = .white
+        } else {
+            view.backgroundColor = .black
+        }
     }
     
     
-
-
 }
 
