@@ -12,8 +12,6 @@ class ViewController: UIViewController {
 
     var lightStatus = true
     
-    @IBOutlet weak var lightButton: UIButton!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +31,7 @@ class ViewController: UIViewController {
     }
     
     fileprivate func updateUI() {
-        if lightStatus {
-            view.backgroundColor = .white
-            lightButton.setTitle("On", for: .normal)
-        } else {
-            view.backgroundColor = .black
-            lightButton.setTitle("Off", for: .normal)
-        }
+        view.backgroundColor = lightStatus ? .white : .black
     }
     
     
