@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // To update the button text while the view is loading
+        updateUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,8 +35,10 @@ class ViewController: UIViewController {
     fileprivate func updateUI() {
         if lightStatus {
             view.backgroundColor = .white
+            lightButton.setTitle("On", for: .normal)
         } else {
             view.backgroundColor = .black
+            lightButton.setTitle("Off", for: .normal)
         }
     }
     
